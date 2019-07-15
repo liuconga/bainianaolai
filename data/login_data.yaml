@@ -1,0 +1,26 @@
+#以下为登录模块自动化测试数据
+"login_001":
+  username: '17301392675'
+  password: '123456'
+  expect_nickname: 'currya'
+  expect_toast: ''
+"login_002":
+  username: ' 17301392675 '
+  password: '123456'
+  expect_nickname: 'currya'
+  expect_toast: ''
+"login_003":
+  username: '17301392672'
+  password: '123456'
+  expect_nickname: ''
+  expect_toast: '此用户不存在'
+"login_004":
+  username: '1730139267'
+  password: '123456'
+  expect_nickname: ''
+  expect_toast: '此用户不存在'
+"login_005":
+  username: '17301392675'
+  password: '1234567'
+  expect_nickname: ''
+  expect_toast: '登录密码错误'
