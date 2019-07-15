@@ -1,6 +1,7 @@
 import pytest
 import sys
 import os
+
 sys.path.append(os.getcwd())
 from tool.read_yaml import read_yaml
 from page.page_in import PageIn
@@ -38,6 +39,7 @@ class TestLogin(object):
     def test_login(self, username, password, expect_nickname, expect_toast):
         # 正向用例-登录
         self.page_login.login(username, password)
+        # 断言昵称
         if expect_nickname:
             try:
                 # 断言：
@@ -50,13 +52,13 @@ class TestLogin(object):
             finally:
                 # 退出登录
                 self.page_login.logout()
-                # 点击我的
-                self.page_login.click_me()
-                # 点击已有账户登录
-                self.page_login.click_account_btn()
+                # 点击我的-以后账后登录组合业务
+                self.page_login.click_login_link()
+
         # 逆向用例
         else:
             try:
+                # 逆向用例-断言toast
                 assert expect_toast in self.page_login.base_get_toast(expect_toast)
             except Exception as e:
                 # 错误截图

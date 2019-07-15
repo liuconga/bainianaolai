@@ -9,6 +9,9 @@ class PageLogin(BasePage):
 
     # 点击我操作
     def click_me(self):
+        # 获取首页包名和Activity名
+        # print(self.driver.current_package)
+        # print(self.driver.current_activity)
         self.base_click(page.my_btn)
 
     # 点击已有账号去登录
@@ -60,6 +63,13 @@ class PageLogin(BasePage):
         self.input_password(password)
         # 点击登录
         self.click_login_btn()
+
+    # 组合业务-点击已有账号去登录
+    def click_me_and_account(self):
+        # 点击我
+        self.click_me()
+        # 点击以后账号登录
+        self.click_account_btn()
 
     # 组合业务-退出登录
     def logout(self):

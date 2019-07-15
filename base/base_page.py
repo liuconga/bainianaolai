@@ -26,8 +26,9 @@ class BasePage(object):
 
     # 5.封装获取toast信息方法
     def base_get_toast(self, msg):
-        #获取toast定位的方法
+        # 获取toast定位的方法
         loc = By.XPATH, "//*[contains(@text,'{}')]".format(msg)
+        # 因为toast时间短暂，要更改刷新频率为0.2
         return self.base_find(loc, poll=0.2).text
 
     # 错误截图方法
