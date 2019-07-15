@@ -1,0 +1,9 @@
+#recipt,tel,dict,detail,postcode
+recipt: "james"
+tel: "17301392672"
+dict:
+  province: "广东省"
+  city: "广州市"
+  district: "天河区"
+detial: "国风美唐小区"
+postcode: "052360"

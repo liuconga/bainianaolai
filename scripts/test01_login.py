@@ -11,7 +11,7 @@ from tool.driver_util import DriverUtil
 
 def get_data():
     """登录测试数据"""
-    result = read_yaml()
+    result = read_yaml('login_data')
     data_list = []
     for data in result.values():
         data_list.append(tuple(data.values()))

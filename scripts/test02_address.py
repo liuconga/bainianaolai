@@ -1,5 +1,19 @@
+import sys
+import os
+
+import pytest
+
+sys.path.append(os.getcwd())
+from tool.read_yaml import read_yaml
 from page.page_in import PageIn
 from tool.driver_util import DriverUtil
+
+
+def get_data():
+    result = read_yaml('address_data')
+    list_data = []
+    list_data.append(tuple(result.values()))
+    return list_data
 
 
 class TestAddress(object):
@@ -8,19 +22,20 @@ class TestAddress(object):
         # 初始化地址管理对象
         self.page_address = PageIn().get_address_page()
         # 初始化登录模块对象
-        self.page_login = PageIn.get_login_page()
+        self.page_login = PageIn().get_login_page()
 
     # 结束
     def teardown_class(self):
         DriverUtil.quit_driver()
 
     # 测试方法
-    def test_post_address(self):
+    @pytest.mark.parametrize('recipt,tel,dict,detail,postcode', get_data())
+    def test_post_address(self, recipt, tel, dict, detail, postcode):
+        # 依赖登录模块进行登录操作
         self.page_login.address_login("17301392675", '123456')
 
-        dict = {"province": '广东省', "city": '广州市', "district": '天河区'}
         # 正向用例
-        self.page_address.add_address('currya', "18301225040", dict, '国风美唐', '052360')
+        self.page_address.add_address(recipt, tel, dict, detail, postcode)
         # 断言
-    # 逆向用例
-    # 断言
+
+
