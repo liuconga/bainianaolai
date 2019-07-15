@@ -1,9 +1,8 @@
-#以下为登录模块自动化测试数据：对应用例编号
 "bnal_login_001":
-  username: '17301392675'
-  password: '123456'
-  expect_nickname: 'currya'
-  expect_toast: ''
+   username: '17301392675'
+   password: '123456'
+   expect_nickname: 'currya'
+   expect_toast: ''
 "bnal_login_002":
   username: ' 17301392675 '
   password: '123456'

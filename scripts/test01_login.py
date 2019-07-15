@@ -24,10 +24,8 @@ class TestLogin(object):
     def setup_class(self):
         # 初始化page_login对象
         self.page_login = PageIn().get_login_page()
-        # 点击我
-        self.page_login.click_me()
-        # 点击已有账户登录
-        self.page_login.click_account_btn()
+        # 点击我的-以后账后登录组合业务
+        self.page_login.click_me_and_account()
 
     # 结束操作
     def teardown_class(self):
@@ -53,7 +51,7 @@ class TestLogin(object):
                 # 退出登录
                 self.page_login.logout()
                 # 点击我的-以后账后登录组合业务
-                self.page_login.click_login_link()
+                self.page_login.click_me_and_account()
 
         # 逆向用例
         else:
