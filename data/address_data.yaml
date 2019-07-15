@@ -1,10 +1,21 @@
 #recipt,tel,dict,detail,postcode
-recipt: "james"
-tel: "17301392672"
-dict:
-  province: "广东省"
-  city: "广州市"
-  district: "天河区"
-detial: "国风美唐小区"
-postcode: "052360"
-expect: "james  17301392672"
+address_001:
+  recipt: "james"
+  tel: "17301392672"
+  dict:
+    province: "广东省"
+    city: "广州市"
+    district: "天河区"
+  detial: "国风美唐小区"
+  postcode: "052360"
+  expect: "james  17301392672"
+address_002:
+  recipt: "currya"
+  tel: "18301225044"
+  dict:
+    province: "北京市"
+    city: "北京市"
+    district: "昌平区"
+  detial: "霍营地铁站"
+  postcode: "103360"
+  expect: "currya  18301225044"

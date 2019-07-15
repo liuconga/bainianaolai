@@ -17,6 +17,5 @@ if __name__ == '__main__':
     # print(data_list)
     """以下为验证address_data的参数化数据"""
     result = read_yaml('address_data')
-    list_data = []
-    list_data.append(tuple(result.values()))
-    print(list_data)
+    data_list=[tuple(data.values()) for data in result.values()]
+    print(data_list)

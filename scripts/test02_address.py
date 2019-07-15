@@ -11,9 +11,9 @@ from tool.driver_util import DriverUtil
 
 def get_data():
     result = read_yaml('address_data')
-    list_data = []
-    list_data.append(tuple(result.values()))
-    return list_data
+    #通过列表推导式生成列表
+    data_list = [tuple(data.values()) for data in result.values()]
+    return data_list
 
 
 class TestAddress(object):
@@ -23,6 +23,7 @@ class TestAddress(object):
         self.page_address = PageIn().get_address_page()
         # 初始化登录模块对象
         self.page_login = PageIn().get_login_page()
+        self.page_login.address_login("17301392675", '123456')
 
     # 结束
     def teardown_class(self):
@@ -32,7 +33,7 @@ class TestAddress(object):
     @pytest.mark.parametrize('recipt,tel,dict,detail,postcode,expect', get_data())
     def test_post_address(self, recipt, tel, dict, detail, postcode, expect):
         # 依赖登录模块进行登录操作
-        self.page_login.address_login("17301392675", '123456')
+
 
         # 正向用例
         self.page_address.add_address(recipt, tel, dict, detail, postcode)
