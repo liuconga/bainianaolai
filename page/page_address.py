@@ -64,3 +64,12 @@ class PageAddress(BasePage):
         self.page_default_address()
         # 点击保存
         self.page_save()
+
+    # 获取地址列表
+    def get_address_list(self):
+        elements = self.base_find_elements(page.address_assert_info)
+        address_list = []
+        # 通过行内循环式
+        for element in elements:
+            address_list.append(element.text)
+        return address_list

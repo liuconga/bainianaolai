@@ -29,13 +29,19 @@ class TestAddress(object):
         DriverUtil.quit_driver()
 
     # 测试方法
-    @pytest.mark.parametrize('recipt,tel,dict,detail,postcode', get_data())
-    def test_post_address(self, recipt, tel, dict, detail, postcode):
+    @pytest.mark.parametrize('recipt,tel,dict,detail,postcode,expect', get_data())
+    def test_post_address(self, recipt, tel, dict, detail, postcode, expect):
         # 依赖登录模块进行登录操作
         self.page_login.address_login("17301392675", '123456')
 
         # 正向用例
         self.page_address.add_address(recipt, tel, dict, detail, postcode)
-        # 断言
-
-
+        # 断言收件人地址列表收件人姓名+手机号是否正确
+        # 获取收集人地址列表手人间姓名+手机号
+        # print(self.page_address.get_address_list())
+        try:
+            assert expect in self.page_address.get_address_list()
+        except Exception as e:
+            # 错误截图并提交到allure报告
+            self.page_address.get_error_screenshot()
+            raise e

@@ -15,6 +15,10 @@ class BasePage(object):
         allure.attach("查找的元素".format(loc), "")
         return WebDriverWait(self.driver, timeout=timeout, poll_frequency=poll).until(lambda x: x.find_element(*loc))
 
+    @allure.step(title="正在查找元素列表")
+    def base_find_elements(self, loc, timeout=30, poll=0.5):
+        allure.attach("查找的元素列表{}".format(loc), "")
+        return WebDriverWait(self.driver, timeout=timeout, poll_frequency=poll).until(lambda x: x.find_elements(*loc))
     # 3.封装输入文本方法
     @allure.step(title="正在输入操作")
     def base_input_text(self, loc, text):
