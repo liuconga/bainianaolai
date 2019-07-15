@@ -69,6 +69,11 @@ class PageLogin(BasePage):
         # 点击确认退出按钮
         self.base_click(page.logout_confirm)
 
+    # 点击地址管理
+    def click_address_message(self):
+        # 点击确认退出按钮
+        self.base_click(page.address_message)
+
     # 组合业务-登录 注意：一个页面的元素在进行组合
     @allure.step(title='正在进行组合登录操作')
     def login(self, username, password):
@@ -98,3 +103,14 @@ class PageLogin(BasePage):
         self.click_quit()
         # 点击确认退出
         self.click_quit_confirm()
+
+    # 组合业务-地址管理依赖登录业务
+    def address_login(self, username, password):
+        # 点击我并点击已有账号登录
+        self.click_me_and_account()
+        # 组合业务-登录
+        self.login(username, password)
+        # 点击设置
+        self.click_setting()
+        # 点击地址管理
+        self.click_address_message()
