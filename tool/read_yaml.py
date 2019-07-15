@@ -1,6 +1,7 @@
+import allure
 import yaml
 
-
+@allure.step(title='正在进行读取yaml数据操作')
 def read_yaml():
     with open('./data/login_data.yaml', 'r')as f:
         #去除警告方法

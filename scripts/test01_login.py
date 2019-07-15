@@ -1,3 +1,4 @@
+import allure
 import pytest
 import sys
 import os
@@ -45,6 +46,9 @@ class TestLogin(object):
             except Exception as e:
                 # 错误截图
                 self.page_login.get_error_screenshot()
+                # 将错误截图写入到报告
+                with open('./image/fail.png', 'rb')as f:
+                    allure.attach("失败截图", f.read(), allure.attach_type.PNG)
                 # 重新抛出异常
                 raise e
             finally:

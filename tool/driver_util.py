@@ -1,3 +1,4 @@
+import allure
 from appium import webdriver
 
 
@@ -5,6 +6,7 @@ class DriverUtil(object):
     driver = None
 
     @classmethod
+    @allure.step(title="正在初始化driver对象")
     def get_driver(cls):
         if cls.driver is None:
             # 初始化driver
@@ -30,6 +32,7 @@ class DriverUtil(object):
         return cls.driver
 
     @classmethod
+    @allure.step(title="正在关闭driver对象")
     def quit_driver(cls):
         if cls.driver is not None:
             cls.driver.quit()

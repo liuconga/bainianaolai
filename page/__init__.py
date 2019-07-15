@@ -1,4 +1,4 @@
-"""以下为登录模块元素信息"""
+"""以下为登录模块配置数据"""
 from selenium.webdriver.common.by import By
 
 my_btn = By.ID, 'com.yunmall.lc:id/tab_me'
@@ -14,3 +14,15 @@ end_loc = By.ID, 'com.yunmall.lc:id/setting_modify_pwd'
 start_loc = By.ID, 'com.yunmall.lc:id/setting_clear_cache'
 logout = By.ID, 'com.yunmall.lc:id/setting_logout'
 logout_confirm = By.ID, 'com.yunmall.lc:id/ymdialog_right_button'
+# 地址管理
+address_message = By.ID, 'com.yunmall.lc:id/setting_address_manage'
+
+"""以下数据为地址管理模块配置数据"""
+add_new_address = By.ID, 'com.yunmall.lc:id/address_add_new_btn'
+receipt_name = By.ID, 'com.yunmall.lc:id/address_receipt_name'
+add_phone = By.ID, 'com.yunmall.lc:id/address_add_phone'
+address_province = By.ID, 'com.yunmall.lc:id/address_province'
+address_info = By.ID, 'com.yunmall.lc:id/address_detail_addr_info'
+address_post_code = By.ID, 'com.yunmall.lc:id/address_post_code'
+address_default = By.ID, 'com.yunmall.lc:id/address_default'
+save_btn = By.ID, 'com.yunmall.lc:id/button_send'
