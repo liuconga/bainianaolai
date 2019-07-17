@@ -27,3 +27,5 @@ address_post_code = By.ID, 'com.yunmall.lc:id/address_post_code'
 address_default = By.ID, 'com.yunmall.lc:id/address_default'
 save_btn = By.ID, 'com.yunmall.lc:id/button_send'
 address_assert_info = By.ID, 'com.yunmall.lc:id/receipt_name'
+address_assert = By.ID, 'com.yunmall.lc:id/receipt_address'
+

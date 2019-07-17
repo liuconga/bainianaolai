@@ -64,7 +64,7 @@ class PageAddress(BasePage):
         # 点击保存
         self.page_save()
 
-    # 获取收件人地址列表
+    # 获取收件人手机号+姓名
     def get_address_list(self):
         # elements = self.base_find_elements(page.address_assert_info)
         # address_list = []
@@ -73,3 +73,12 @@ class PageAddress(BasePage):
         # return address_list
         # 以下为通过行内循环式也叫列表推导式
         return [element.text for element in self.base_find_elements(page.address_assert_info)]
+    # 获取收件人地址列表
+    def get_address_detail_list(self):
+        # elements = self.base_find_elements(page.address_assert_info)
+        # address_list = []
+        # for element in elements:
+        #     address_list.append(element.text)
+        # return address_list
+        # 以下为通过行内循环式也叫列表推导式
+        return [element.text for element in self.base_find_elements(page.address_assert)]
