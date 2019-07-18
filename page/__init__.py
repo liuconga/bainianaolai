@@ -16,6 +16,7 @@ logout = By.ID, 'com.yunmall.lc:id/setting_logout'
 logout_confirm = By.ID, 'com.yunmall.lc:id/ymdialog_right_button'
 # 地址管理
 address_message = By.ID, 'com.yunmall.lc:id/setting_address_manage'
+area_title=By.ID,"com.yunmall.lc:id/area_title"
 
 """以下数据为地址管理模块配置数据"""
 add_new_address = By.ID, 'com.yunmall.lc:id/address_add_new_btn'
@@ -28,4 +29,10 @@ address_default = By.ID, 'com.yunmall.lc:id/address_default'
 save_btn = By.ID, 'com.yunmall.lc:id/button_send'
 address_assert_info = By.ID, 'com.yunmall.lc:id/receipt_name'
 address_assert = By.ID, 'com.yunmall.lc:id/receipt_address'
+address_edit_btn=By.ID,'com.yunmall.lc:id/ymtitlebar_right_btn'
+address_update=By.ID,'com.yunmall.lc:id/modify'
+address_delete=By.ID,'com.yunmall.lc:id/delete'
+address_delete=By.ID,'com.yunmall.lc:id/delete'
+address_delete_confirm=By.ID,'com.yunmall.lc:id/ymdialog_left_button'
+
 

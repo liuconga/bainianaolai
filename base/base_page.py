@@ -2,6 +2,8 @@ import allure
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 
+import page
+
 
 class BasePage(object):
     # 1.初始化
@@ -19,6 +21,7 @@ class BasePage(object):
     def base_find_elements(self, loc, timeout=30, poll=0.5):
         allure.attach("查找的元素列表{}".format(loc), "")
         return WebDriverWait(self.driver, timeout=timeout, poll_frequency=poll).until(lambda x: x.find_elements(*loc))
+
     # 3.封装输入文本方法
     @allure.step(title="正在输入操作")
     def base_input_text(self, loc, text):
